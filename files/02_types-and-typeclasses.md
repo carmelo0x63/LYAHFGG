@@ -3,6 +3,32 @@ Source: http://learnyouahaskell.com/types-and-typeclasses<br/>
 
 Functions defined in this chapter can be found in [02_types.hs](02_types.hs)
 
+## Summary
+### Types
+- `Int` stands for integer. It's used for whole numbers. 7 can be an `Int` but 7.2 cannot. `Int` is bounded, which means that it has a minimum and a maximum value. Usually on 32-bit machines the maximum possible `Int` is 2147483647 and the minimum is -2147483648.
+- `Integer` stands for, er … also integer. The main difference is that it's not bounded so it can be used to represent really really big numbers. I mean like really big. `Int`, however, is more efficient.
+- `Float` is a real floating point with single precision.
+- `Double` is a real floating point with double the precision!
+- `Bool` is a boolean type. It can have only two values: True and False.
+- `Char` represents a character. It's denoted by single quotes. A list of characters is a string.
+- `Tuples` are types but they are dependent on their length as well as the types of their components, so there is theoretically an infinite number of tuple types, which is too many to cover in this tutorial.
+**NOTE** that the empty tuple () is also a type which can only have a single value: ()
+```
+gchi> :t ()
+() :: ()
+```
+
+### Typeclasses
+- `Eq` is used for types that support equality testing.
+- `Ord` is for types that have an ordering.
+- `Show` typeclass' members can be presented as strings.
+- `Read` is sort of the opposite typeclass of `Show`.
+- `Enum` members are sequentially ordered types — they can be enumerated.
+- `Bounded` members have an upper and a lower bound.
+- `Num` is a numeric typeclass. Its members have the property of being able to act like numbers.
+- `Integral` is also a numeric typeclass. `Num` includes all numbers, including real numbers and integral numbers, `Integral` includes only integral (whole) numbers. In this typeclass are `Int` and `Integer`.
+- `Floating` includes only floating point numbers, so `Float` and `Double`.
+
 #### Believe the type
 ```
 ghci> :t 'a'
