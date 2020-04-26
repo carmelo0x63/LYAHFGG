@@ -2,6 +2,8 @@ Chapter **Starting Out**, shows several examples along with their results. Here 
 If you please, they're also safe to copy and paste into GHCi, results will be printed out right away.<br/>
 Source: http://learnyouahaskell.com/starting-out<br/>
 
+Functions defined in this chapter can be found in [01_starting.hs](files/01_starting.hs)
+
 #### Ready, set, go!
 ```
 GHCi, version 8.0.2: http://www.haskell.org/ghc/  :? for help
@@ -103,7 +105,7 @@ gchi> 92 `div` 10
 ```
 
 #### Baby's first function
-See [baby.hs](https://github.com/mellowiz/LYAHFGG/blob/master/baby.hs)
+See [01_starting.hs](files/01_starting.hs)
 
 ```
 doubleMe x = x + x
