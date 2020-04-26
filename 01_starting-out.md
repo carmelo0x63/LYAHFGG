@@ -4,7 +4,7 @@ Source: http://learnyouahaskell.com/starting-out<br/>
 
 #### Ready, set, go!
 ```
-GHCi, version 8.0.1: http://www.haskell.org/ghc/  :? for help
+GHCi, version 8.0.2: http://www.haskell.org/ghc/  :? for help
 Prelude>
 ```
 
