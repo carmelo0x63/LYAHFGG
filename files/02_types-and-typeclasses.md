@@ -1,7 +1,7 @@
 Chapter **Types and Typeclasses** introduces us to Haskell's type system.<br/>
 Source: http://learnyouahaskell.com/types-and-typeclasses<br/>
 
-Functions defined in this chapter can be found in [02_types.hs](files/02_types.hs)
+Functions defined in this chapter can be found in [02_types.hs](02_types.hs)
 
 #### Believe the type
 ```
