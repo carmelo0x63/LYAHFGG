@@ -11,11 +11,11 @@ Functions defined in this chapter can be found in [02_types.hs](02_types.hs)
 - `Double` is a real floating point with double the precision!
 - `Bool` is a boolean type. It can have only two values: True and False.
 - `Char` represents a character. It's denoted by single quotes. A list of characters is a string.
-- `Tuples` are types but they are dependent on their length as well as the types of their components, so there is theoretically an infinite number of tuple types, which is too many to cover in this tutorial.
+- `Tuples` are types but they are dependent on their length as well as the types of their components, so there is theoretically an infinite number of tuple types, which is too many to cover in this tutorial.</br>
 **NOTE** that the empty tuple () is also a type which can only have a single value: ()
 ```
-gchi> :t ()
-() :: ()
+    gchi> :t ()
+    () :: ()
 ```
 
 ### Typeclasses
