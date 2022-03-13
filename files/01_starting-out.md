@@ -6,6 +6,7 @@ Functions defined in this chapter can be found in [01_starting.hs](01_starting.h
 
 #### Ready, set, go!
 ```
+$ ghci
 GHCi, version 8.0.2: http://www.haskell.org/ghc/  :? for help
 Prelude>
 ```
@@ -112,8 +113,8 @@ doubleMe x = x + x
 ```
 
 ```
-ghci> :l baby
-[1 of 1] Compiling Main             ( baby.hs, interpreted )
+ghci> :l files/01_starting.hs
+[1 of 1] Compiling Main             ( files/01_starting.hs, interpreted )
 Ok, modules loaded: Main.
 ghci> doubleMe 9
 18
@@ -150,6 +151,19 @@ doubleSmallNumber' x = (if x > 100 then x else x*2) + 1
 
 ```
 conanO'Brien = "It's a-me, Conan O'Brien!"
+```
+
+**NOTE**: it's possible to display info about loaded modules and their contents like so...
+```
+gchi> :show modules
+Main             ( files/01_starting.hs, interpreted )
+
+gchi> :browse Main
+doubleMe :: Num a => a -> a
+doubleUs :: Num a => a -> a -> a
+doubleSmallNumber :: (Ord a, Num a) => a -> a
+doubleSmallNumber' :: (Num a, Ord a) => a -> a
+conanO'Brien :: [Char]
 ```
 
 #### An intro to lists
@@ -459,4 +473,6 @@ ghci> let rightTriangles' = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], 
 ghci> rightTriangles'
 [(6,8,10)]
 ```
+
+[Home](README.md)
 

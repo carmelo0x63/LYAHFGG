@@ -12,7 +12,8 @@ Functions defined in this chapter can be found in [02_types.hs](02_types.hs)
 - `Bool` is a boolean type. It can have only two values: True and False.
 - `Char` represents a character. It's denoted by single quotes. A list of characters is a string.
 - `Tuples` are types but they are dependent on their length as well as the types of their components, so there is theoretically an infinite number of tuple types, which is too many to cover in this tutorial.</br>
-**NOTE** that the empty tuple () is also a type which can only have a single value: ()
+</br>
+**NOTE**: the empty tuple () is also a type which can only have a single value: ()
 ```
     gchi> :t ()
     () :: ()
@@ -254,10 +255,18 @@ ghci> :t (*)
 (*) :: (Num a) => a -> a -> a
 ```
 
-##### Integral typeclass
-
 ##### Floating typeclass
+Includes `Float` and `Double` types
+
+##### Integral typeclass
 ```
 gchi> :t fromIntegral
-fromIntegral :: (Num b, Integral a) => a -> b
+fromIntegral :: (Integral a, Num b) => a -> b
+gchi> :t length
+length :: Foldable t => t a -> Int
+ghci> fromIntegral (length [1,2,3,4]) + 3.2
+7.2
 ```
+
+[Home](README.md)
+
