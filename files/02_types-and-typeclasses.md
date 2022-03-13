@@ -268,5 +268,5 @@ ghci> fromIntegral (length [1,2,3,4]) + 3.2
 7.2
 ```
 
-[Home](README.md)
+[Home](../README.md)
 

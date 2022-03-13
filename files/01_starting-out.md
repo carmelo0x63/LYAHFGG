@@ -474,5 +474,5 @@ ghci> rightTriangles'
 [(6,8,10)]
 ```
 
-[Home](README.md)
+[Home](../README.md)
 
