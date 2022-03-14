@@ -1,5 +1,5 @@
 # LYAHFGG
-[Haskell](https://www.haskell.org) is a [purely functional](https://en.wikipedia.org/wiki/Purely_functional_programming), [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation), [declarative](https://en.wikipedia.org/wiki/Declarative_programming), [statically typed] (https://en.wikipedia.org/wiki/Type_system#Static_type_checking) language. Quite fascinating if you come from the world of [imperative languages](https://en.wikipedia.org/wiki/Imperative_programming).</br>
+[Haskell](https://www.haskell.org) is a [purely functional](https://en.wikipedia.org/wiki/Purely_functional_programming), [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation), [declarative](https://en.wikipedia.org/wiki/Declarative_programming), [statically typed](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) language. Quite fascinating if you come from the world of [imperative languages](https://en.wikipedia.org/wiki/Imperative_programming).</br>
 _Learn You A Haskell For Great Good_, by Miran Lipovača, is a wonderful book, fun to read, with many examples, solved exercises and source code.</br>
 Here's my attempt to make it into a live version where the code can be collaboratively enriched with additional examples.
 
