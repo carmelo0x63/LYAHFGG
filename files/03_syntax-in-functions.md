@@ -117,24 +117,30 @@ tell (x:[]) = "The list has one element: " ++ show x
 tell (x:y:[]) = "The list has two elements: " ++ show x ++ " and " ++ show y
 tell (x:y:_) = "This list is long. The first two elements are: " ++ show x ++ " and " ++ show y
 ```
+
 ```
-length' :: (Num b) => [a] -> b
+length' :: Num b => [a] -> b
 length' [] = 0
-length' (_:xs) = 1 + length' xs```
+length' (_:xs) = 1 + length' xs
+```
+
 ```
 sum' :: (Num a) => [a] -> a
 sum' [] = 0
 sum' (x:xs) = x + sum' xs
 ```
+
 ```
 capital :: String -> String
 capital "" = "Empty string, whoops!"
 capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 ```
+
 ```
 ghci> capital "Dracula"
 "The first letter of Dracula is D"
 ```
+
 ```
 bmiTell :: (RealFloat a) => a -> String
 bmiTell bmi
@@ -143,6 +149,7 @@ bmiTell bmi
     | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"
     | otherwise   = "You're a whale, congratulations!"
 ```
+
 ```
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
@@ -151,20 +158,24 @@ bmiTell weight height
     | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"
     | otherwise                 = "You're a whale, congratulations!"
 ```
+
 ```
 ghci> bmiTell 85 1.90
 "You're supposedly normal. Pffft, I bet you're ugly!"
 ```
+
 ```
 max' :: (Ord a) => a -> a -> a
 max' a b 
     | a > b     = a
     | otherwise = b
 ```
+
 ```
 max' :: (Ord a) => a -> a -> a
 max' a b | a > b = a | otherwise = b
 ```
+
 ```
 myCompare :: (Ord a) => a -> a -> Ordering
 a `myCompare` b
@@ -172,10 +183,12 @@ a `myCompare` b
     | a == b    = EQ
     | otherwise = LT
 ```
+
 ```
 ghci> 3 `myCompare` 2
 GT
 ```
+
 ```
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
@@ -184,6 +197,7 @@ bmiTell weight height
     | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"
     | otherwise                   = "You're a whale, congratulations!"
 ```
+
 ```
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
@@ -193,6 +207,7 @@ bmiTell weight height
     | otherwise   = "You're a whale, congratulations!"
     where bmi = weight / height ^ 2
 ```
+
 ```
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
@@ -205,22 +220,26 @@ bmiTell weight height
           normal = 25.0
           fat = 30.0
 ```
+
 ```
     ...
     where bmi = weight / height ^ 2
           (skinny, normal, fat) = (18.5, 25.0, 30.0)
 ```
+
 ```
 initials :: String -> String -> String
 initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
     where (f:_) = firstname
           (l:_) = lastname  
 ```
+
 ```
 calcBmis :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis xs = [bmi w h | (w, h) <- xs]
     where bmi weight height = weight / height ^ 2
 ```
+
 ```
 cylinder :: (RealFloat a) => a -> a -> a
 cylinder r h =
@@ -228,36 +247,44 @@ cylinder r h =
         topArea = pi * r ^2
     in  sideArea + 2 * topArea
 ```
+
 ```
 ghci> [if 5 > 3 then "Woo" else "Boo", if 'a' > 'b' then "Foo" else "Bar"]
 ["Woo", "Bar"]
 ghci> 4 * (if 10 > 5 then 10 else 0) + 2
 42
 ```
+
 ```
 ghci> 4 * (let a = 9 in a + 1) + 2
 42
 ```
+
 ```
 ghci> [let square x = x * x in (square 5, square 3, square 2)]
 [(25,9,4)]
 ```
+
 ```
 ghci> (let a = 100; b = 200; c = 300 in a*b*c, let foo="Hey "; bar = "there!" in foo ++ bar)
 (6000000,"Hey there!")
 ```
+
 ```
 ghci> (let (a,b,c) = (1,2,3) in a+b+c) * 100
 600
 ```
+
 ```
 calcBmis :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2]
 ```
+
 ```
 calcBmis :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
 ```
+
 ```
 ghci> let zoot x y z = x * y + z
 ghci> zoot 3 9 2
@@ -267,28 +294,33 @@ ghci> let boot x y z = x * y + z in boot 3 4 2
 ghci> boot
 <interactive>:1:0: Not in scope: `boot'
 ```
+
 ```
 head' :: [a] -> a
 head' [] = error "No head for empty lists!"
 head' (x:_) = x
 ```
+
 ```
 head' :: [a] -> a
 head' xs = case xs of [] -> error "No head for empty lists!"
                       (x:_) -> x
 ```
+
 ```
 case expression of pattern -> result
                    pattern -> result
                    pattern -> result
                    ...
 ```
+
 ```
 describeList :: [a] -> String
 describeList xs = "The list is " ++ case xs of [] -> "empty."
                                                [x] -> "a singleton list." 
                                                xs -> "a longer list."
 ```
+
 ```
 describeList :: [a] -> String
 describeList xs = "The list is " ++ what xs
@@ -296,3 +328,4 @@ describeList xs = "The list is " ++ what xs
           what [x] = "a singleton list."
           what xs = "a longer list."
 ```
+
