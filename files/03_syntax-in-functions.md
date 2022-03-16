@@ -1,10 +1,18 @@
 ```
-lucky :: (Integral a) => a -> String
+lucky :: Integral a => a -> String
 lucky 7 = "LUCKY NUMBER SEVEN!"
 lucky x = "Sorry, you're out of luck, pal!"
 ```
+
 ```
-sayMe :: (Integral a) => a -> String
+ghci> lucky 1
+"Sorry, you're out of luck, pal!"
+ghci> lucky 7
+"LUCKY NUMBER SEVEN!"
+```
+
+```
+sayMe :: Integral a => a -> String
 sayMe 1 = "One!"
 sayMe 2 = "Two!"
 sayMe 3 = "Three!"
@@ -12,17 +20,34 @@ sayMe 4 = "Four!"
 sayMe 5 = "Five!"
 sayMe x = "Not between 1 and 5"
 ```
+
 ```
-factorial :: (Integral a) => a -> a
+ghci> sayMe 1
+"One!"
+ghci> sayMe 6
+"Not between 1 and 5"
+```
+
+```
+factorial :: Integral a => a -> a
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
 ```
+
+```
+ghci> factorial 0
+1
+ghci> factorial 3
+6
+```
+
 ```
 charName :: Char -> String
 charName 'a' = "Albert"
 charName 'b' = "Broseph"
 charName 'c' = "Cecil"
 ```
+
 ```
 ghci> charName 'a'
 "Albert"
@@ -31,14 +56,18 @@ ghci> charName 'b'
 ghci> charName 'h'
 \"\*\*\* Exception: tut.hs:(53,0)-(55,21): Non-exhaustive patterns in function charName
 ```
+
 ```
-addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)
-addVectors a b = (fst a + fst b, snd a + snd b)
+addVectors :: Num a => (a, a) -> (a, a) -> (a, a)
+addVectors a b = (fst a + fst b, snd a + snd b)   -- simple version
+addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2) -- improved version
 ```
+
 ```
-addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)
-addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+ghci> addVectors (1,2) (3,4)
+(4,6)
 ```
+
 ```
 first :: (a, b, c) -> a
 first (x, _, _) = x
@@ -49,6 +78,7 @@ second (_, y, _) = y
 third :: (a, b, c) -> c
 third (_, _, z) = z
 ```
+
 ```
 ghci> let xs = [(1,3), (4,3), (2,4), (5,3), (5,6), (3,1)]
 ghci> [a+b | (a,b) <- xs]
