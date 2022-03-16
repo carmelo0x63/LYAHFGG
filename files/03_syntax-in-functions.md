@@ -1,3 +1,6 @@
+The functions below are defined within `03_syntax.hs`. The file can be loaded into GHCI as follows:
+`ghci> :l files/03_syntax.hs`
+
 ```
 lucky :: Integral a => a -> String
 lucky 7 = "LUCKY NUMBER SEVEN!"
@@ -54,7 +57,7 @@ ghci> charName 'a'
 ghci> charName 'b'
 "Broseph"
 ghci> charName 'h'
-\"\*\*\* Exception: tut.hs:(53,0)-(55,21): Non-exhaustive patterns in function charName
+"*** Exception: tut.hs:(53,0)-(55,21): Non-exhaustive patterns in function charName
 ```
 
 ```
@@ -80,22 +83,35 @@ third (_, _, z) = z
 ```
 
 ```
+ghci> first (1,2,3)
+1
+ghci> second (1,2,3)
+2
+ghci> third (1,2,3)
+3
+```
+
+```
 ghci> let xs = [(1,3), (4,3), (2,4), (5,3), (5,6), (3,1)]
-ghci> [a+b | (a,b) <- xs]
-[4,7,6,8,11,4] ```
+ghci> [a + b | (a,b) <- xs]
+[4,7,6,8,11,4]
+```
+
 ```
 head' :: [a] -> a
 head' [] = error "Can't call head on an empty list, dummy!"
 head' (x:_) = x
 ```
+
 ```
 ghci> head' [4,5,6]
 4
 ghci> head' "Hello"
 'H'
 ```
+
 ```
-tell :: (Show a) => [a] -> String
+tell :: Show a => [a] -> String
 tell [] = "The list is empty"
 tell (x:[]) = "The list has one element: " ++ show x
 tell (x:y:[]) = "The list has two elements: " ++ show x ++ " and " ++ show y

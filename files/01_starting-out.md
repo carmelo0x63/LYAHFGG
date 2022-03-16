@@ -7,7 +7,7 @@ Functions defined in this chapter can be found in [01_starting.hs](01_starting.h
 #### Ready, set, go!
 ```
 $ ghci
-GHCi, version 8.0.2: http://www.haskell.org/ghc/  :? for help
+GHCi, version 8.4.4: http://www.haskell.org/ghc/  :? for help
 Prelude>
 ```
 
