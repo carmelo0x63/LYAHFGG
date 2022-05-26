@@ -1,6 +1,7 @@
 The functions below are defined within `03_syntax.hs`. The file can be loaded into GHCI as follows:
 `ghci> :l files/03_syntax.hs`
 
+### Pattern matching and recursive functions
 ```
 lucky :: Integral a => a -> String
 lucky 7 = "LUCKY NUMBER SEVEN!"
@@ -118,6 +119,7 @@ tell (x:y:[]) = "The list has two elements: " ++ show x ++ " and " ++ show y
 tell (x:y:_) = "This list is long. The first two elements are: " ++ show x ++ " and " ++ show y
 ```
 
+### Recursive functions
 ```
 length' :: Num b => [a] -> b
 length' [] = 0
@@ -125,7 +127,7 @@ length' (_:xs) = 1 + length' xs
 ```
 
 ```
-sum' :: (Num a) => [a] -> a
+sum' :: Num a => [a] -> a
 sum' [] = 0
 sum' (x:xs) = x + sum' xs
 ```
@@ -141,6 +143,7 @@ ghci> capital "Dracula"
 "The first letter of Dracula is D"
 ```
 
+### Pattern matching with "guards"
 ```
 bmiTell :: (RealFloat a) => a -> String
 bmiTell bmi
@@ -189,15 +192,7 @@ ghci> 3 `myCompare` 2
 GT
 ```
 
-```
-bmiTell :: (RealFloat a) => a -> a -> String
-bmiTell weight height
-    | weight / height ^ 2 <= 18.5 = "You're underweight, you emo, you!"
-    | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
-    | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"
-    | otherwise                   = "You're a whale, congratulations!"
-```
-
+### `where` keyword
 ```
 bmiTell :: (RealFloat a) => a -> a -> String
 bmiTell weight height
@@ -328,4 +323,6 @@ describeList xs = "The list is " ++ what xs
           what [x] = "a singleton list."
           what xs = "a longer list."
 ```
+
+[Home](../README.md)
 
